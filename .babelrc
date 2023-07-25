@@ -8,13 +8,14 @@
       }
     ],
     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      // for async await
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ]
-  //   "plugins": [
-  //     [
-  //       "@babel/plugin-transform-runtime",
-  //       {
-  //         "regenerator": true
-  //       }
-  //     ]
-  //   ]
 }
