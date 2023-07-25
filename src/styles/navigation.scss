@@ -6,5 +6,5 @@
 }
 
 .flex-parent {
-  @include flex(column);
+  @include flex(column-reverse);
 }
