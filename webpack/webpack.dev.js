@@ -13,8 +13,8 @@ module.exports = {
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.name': JSON.stringify('Seun Development'),
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env.name': JSON.stringify('Seun Development'),
+    // }),
   ],
 }
