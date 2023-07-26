@@ -1,7 +1,7 @@
-import React from "react"
 import { Navigate, createBrowserRouter } from "react-router-dom"
-import PagesLayout from "../layout/pages-layout"
+import { isAuthenticated, isUnAuthenticated } from "../helper"
 import AuthLayout from "../layout/auth-layout"
+import PagesLayout from "../layout/pages-layout"
 import ErrorPage from "../views/error"
 import { authenticationRoutes } from "./auth-routes"
 import { pageRoutes } from "./page-routes"
@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
   {
     path: "/auth",
     element: (
-      <RouteProtection redirect={Routes.home} validations={[]}>
+      <RouteProtection redirect={Routes.home} validations={[isUnAuthenticated]}>
         <AuthLayout />
       </RouteProtection>
     ),
@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
   {
     path: "/app",
     element: (
-      <RouteProtection redirect={Routes.login} validations={[]}>
+      <RouteProtection redirect={Routes.login} validations={[isAuthenticated]}>
         <PagesLayout />
       </RouteProtection>
     ),
