@@ -1,0 +1,9 @@
+.btn {
+  @apply rounded-lg px-4 py-[15px] whitespace-nowrap flex justify-center items-center;
+  @apply text-[18px] font-bold;
+  @apply max-2xl:py-[10px] max-2xl:text-[16px] hover:opacity-90 font-raleway;
+}
+
+.btn__inactive {
+  @apply bg-secondary-100/50 text-white;
+}
