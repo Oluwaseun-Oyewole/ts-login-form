@@ -1,5 +1,17 @@
-import ReactDom from "react-dom"
-import App from "./App"
-import "./styles/index.css"
+import React, { Suspense } from "react"
+import ReactDOM from "react-dom/client"
+import { RouterProvider } from "react-router-dom"
+import "./index.scss"
+import routes from "./routes"
 
-ReactDom.render(<App />, document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
+root.render(
+  <React.StrictMode>
+    <Suspense fallback={<p>Loading...</p>}>
+      <RouterProvider
+        router={routes}
+        fallbackElement={<p>Loading Fallback..</p>}
+      />
+    </Suspense>
+  </React.StrictMode>
+)
